@@ -1,5 +1,6 @@
 # README
 今から編集していくで〜
+楽しくなってきたでしかし
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
