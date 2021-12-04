@@ -88,6 +88,7 @@ Githubに草を生やすだけでなく、筋トレカレンダーにも草を�
     * twitterのようにトレーニング内容を共有することができる
     * モチベーションUPのための筋トレ格言を投稿できる
     * いいね機能
+    * コメント機能
     * フォロー、フォロワー機能
     * ダイレクトメッセージ機能
   * マッチング機能
@@ -108,5 +109,5 @@ Githubに草を生やすだけでなく、筋トレカレンダーにも草を�
 - IDE：Cloud9
 
 ## 使用素材
-![Coming soon](app/assets/images/comingsoon.jpg)
+![Coming soon](app/assets/images/comingsoon.jpg)<br />
 [イラストAC](https://www.ac-illust.com/)
