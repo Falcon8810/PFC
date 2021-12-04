@@ -109,5 +109,5 @@ Githubに草を生やすだけでなく、筋トレカレンダーにも草を�
 - IDE：Cloud9
 
 ## 使用素材
-![Coming soon](app/assets/images/comingsoon.jpg)<br />
-[イラストAC](https://www.ac-illust.com/)
+* ![Coming soon](app/assets/images/comingsoon.jpg)<br />
+* [イラストAC](https://www.ac-illust.com/)
