@@ -75,7 +75,7 @@ _3ヶ月後に10kg痩せよう!!それまでは減量食!!_というようなお
   * 自身の写真をつなぎ合わせ、体型の変化がわかるgifファイルを自動生成
   * SNS機能
     * twitterのようにトレーニング内容を共有することができる
-    * モチベーションUPのための筋トレ格言を投稿
+    * モチベーションUPのための筋トレ格言を投稿できる
     * いいね機能
     * フォロー、フォロワー機能
     * ダイレクトメッセージ機能
@@ -93,7 +93,7 @@ _3ヶ月後に10kg痩せよう!!それまでは減量食!!_というようなお
 * 🍴食事前後
 
 ## 設計書
-![Coming soon](/image/comingsoon.jpg)
+![Coming soon](/images/comingsoon.jpg)
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1E4Quehglf9PxM1XTE-ft2X5-hJ5dmoJhsI-UJlgzVmY/edit#gid=0>
@@ -106,4 +106,4 @@ _3ヶ月後に10kg痩せよう!!それまでは減量食!!_というようなお
 - IDE：Cloud9
 
 ## 使用素材
-![Coming soon](/image/comingsoon.jpg)
+![Coming soon](/images/comingsoon.jpg)
