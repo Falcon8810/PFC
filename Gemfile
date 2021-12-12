@@ -67,3 +67,7 @@ gem 'devise-i18n'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 #画像加工用(サイズ調整など)
 gem "refile-mini_magick"
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 5.13'
+#enum
