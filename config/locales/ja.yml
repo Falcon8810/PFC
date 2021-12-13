@@ -1,0 +1,17 @@
+ja:
+  enums:
+    event:
+      body_part:
+        chest: "胸"
+        back: "背中"
+        shoulder: "肩"
+        arm: "腕"
+        leg: "脚"
+        aerobic: "有酸素運動"
+        others: "その他"
+    meal:
+      category:
+        breakfast: "朝食"
+        lunch: "昼食"
+        dinner: "夕食"
+        snack: "間食"
