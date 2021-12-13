@@ -35,9 +35,11 @@
   </div>
 
   <div class="field">
-    <%= f.label :birthday, "生年月日" %><br />
-    <%= f.date_select :birthday %>
+    <%= f.label "生年月日" %><br />
+    <%= f.date_select :birthday, use_month_numbers: true, prompt: "--", start_year: (Time.now.year - 10), end_year: 1930 %>
   </div>
+  
+  
 
   <div class="actions">
     <%= f.submit t('.sign_up') %>
