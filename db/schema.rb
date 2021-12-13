@@ -10,7 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_12_095938) do
+ActiveRecord::Schema.define(version: 2021_12_13_020601) do
+
+  create_table "events", force: :cascade do |t|
+    t.integer "body_part", null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "meal_details", force: :cascade do |t|
+    t.integer "meal_id"
+    t.integer "my_menu_id"
+    t.string "name"
+    t.integer "calory"
+    t.float "protein"
+    t.float "fat"
+    t.float "carb"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.date "date", null: false
+    t.integer "category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "training_details", force: :cascade do |t|
+    t.integer "event_id"
+    t.float "weight"
+    t.integer "repetition"
+    t.float "time"
+    t.float "distance"
+    t.string "memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trainings", force: :cascade do |t|
+    t.date "date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
