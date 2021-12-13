@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: 1
+  weight: 1.5
+  repetition: 1
+  memo: MyString
+
+two:
+  event_id: 1
+  weight: 1.5
+  repetition: 1
+  memo: MyString
