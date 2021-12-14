@@ -38,8 +38,16 @@
     <%= f.label "生年月日" %><br />
     <%= f.date_select :birthday, use_month_numbers: true, prompt: "--", start_year: (Time.now.year - 10), end_year: 1930 %>
   </div>
-  
-  
+
+  <div class= "field">
+    <%= f.label "身長" %>
+    <%= f.number_field :height, step: '0.1', min: '100' %>
+  </div>
+
+  <div class= "field">
+    <%= f.label "体重" %>
+    <%= f.number_field :weight, step: '0.1', min: '20' %>
+  </div>
 
   <div class="actions">
     <%= f.submit t('.sign_up') %>
