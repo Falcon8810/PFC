@@ -12,47 +12,47 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #6600FF;">
-        <div class="container">
-          <!--ナビバーロゴ-->
-          <a class="navbar-brand p-2" href="/">
-            <%= image_tag 'nyanko.png', size: "150x150", alt: "logo" %>
-            <span style="color: #fff;">筋トレマニアはひかれ合う</span>
-          </a>
-          <!--バーガー部分-->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expand="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!--トグルメニュー中身-->
-          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <!--ml-autoはmargin lightがauto-->
-            <ul class="navbar-nav ml-auto">
-              <% if user_signed_in? %>
-                <li class="nav-item nav-link">
-                  <%= link_to "マイページ", root_path, class: "" %>
-                </li>
-                <li class="nav-item nav-link">
-                  <%= link_to "筋トレ", root_path, class: "" %>
-                </li>
-                <li class="nav-item nav-link">
-                  <%= link_to "食事", root_path, class: "" %>
-                </li>
-                <li class="nav-item nav-link">
-                  <%= link_to "ログアウト", destroy_user_session_path, class: "" %>
-                </li>
-              <% else %>
-                <li class="nav-item nav-link active">
-                  <%= link_to "top", root_path, class: "" %>
-                </li>
-                <li class="nav-item nav-link">
-                  <%= link_to "新規登録", new_user_resistration_path, class: "" %>
-                </li>
-                <li class="nav-item nav-link">
-                  <%= link_to "ログイン", new_user_session_path, class: "" %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+      <!--navbar-light" style="background-color: #6600FF;-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!--ナビバーロゴ-->
+        <a class="navbar-brand p-2" href="/">
+          <%= image_tag 'nyanko.png', size: "150x150", alt: "logo" %>
+          <span style="color: #fff;">筋トレマニアはひかれ合う</span>
+        </a>
+        <!--バーガー部分-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expand="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--トグルメニュー中身-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!--ml-autoはmargin lightがauto-->
+          <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item nav-link">
+                <%= link_to "マイページ", root_path, class: "btn btn-outline-light" %>
+              </li>
+              <li class="nav-item nav-link">
+                <%= link_to "筋トレ", root_path, class: "btn btn-outline-light" %>
+              </li>
+              <li class="nav-item nav-link">
+                <%= link_to "食事", root_path, class: "btn btn-outline-light" %>
+              </li>
+              <li class="nav-item nav-link">
+                <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-light" %>
+              </li>
+              <!--余裕があればここに<li class="nav-item dropdown"></li>-->
+            <% else %>
+              <li class="nav-item nav-link active">
+                <%= link_to "top", root_path, class: "btn btn-outline-light" %>
+              </li>
+              <li class="nav-item nav-link">
+                <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-light" %>
+              </li>
+              <li class="nav-item nav-link">
+                <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-light" %>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </nav>
     </header>
