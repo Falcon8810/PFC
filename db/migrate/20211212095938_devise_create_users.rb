@@ -39,6 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.float :weight
       t.string :profile_image_id
       t.boolean :is_deleted, default: false, null: false
+      t.integer :activity_level
 
       t.timestamps null: false
     end
