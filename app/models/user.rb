@@ -13,4 +13,6 @@ class User < ApplicationRecord
   #refileが特定のカラムにアクセスするための記述
   attachment :profile_image
 
+    enum activity_level: { low: 0, middle: 1, high: 2 }
+
 end
