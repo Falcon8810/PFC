@@ -72,3 +72,10 @@ gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 #enum
 gem "enum_help"
+
+# 環境変数を管理するgem
+gem 'dotenv-rails'
+# 本番環境のみのgem
+group :production do
+  gem 'mysql2'
+end
