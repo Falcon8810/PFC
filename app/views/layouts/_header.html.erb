@@ -25,6 +25,9 @@
             <%= link_to "食事", root_path, class: "btn btn-outline-secondary" %>
           </li>
           <li class="nav-item nav-link">
+            <%= link_to "基本情報設定",  edit_user_registration_path, class: "btn btn-outline-secondary" %>
+          </li>
+          <li class="nav-item nav-link">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary" %>
           </li>
           <!--余裕があればここに<li class="nav-item dropdown"></li>-->

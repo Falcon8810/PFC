@@ -1,3 +1,29 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<p>これがマイページなり、URLは正しく反映されているかな？？</p>
+<h1>マイページ</h1>
+<div>
+  <ul>
+    <li>筋トレカレンダー</li>
+    <li>栄養サマリー</li>
+    <li>体重グラフ</li>
+  </ul>
+  </div>
+
+<table>
+  <tr>
+    <th>ニックネーム</th>
+    <td><%= current_user.name %></td>
+  </tr>
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= current_user.email %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td><%= current_user.sex %></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td></td>
+  </tr>
+  <tr></tr>
+  <tr></tr>
+</table>
