@@ -68,7 +68,6 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 #画像加工用(サイズ調整など)
 gem "refile-mini_magick"
 gem 'bootstrap', '~> 4.5'
-gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
 #enum
 gem "enum_help"
@@ -79,3 +78,8 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+
+# カレンダー機能
+gem 'jquery-rails', '4.3.3'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
