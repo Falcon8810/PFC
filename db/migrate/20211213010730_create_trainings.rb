@@ -1,7 +1,11 @@
 class CreateTrainings < ActiveRecord::Migration[5.2]
   def change
     create_table :trainings do |t|
-      t.date :date, null: false
+      t.datetime :starts_at
+      t.datetime :ends_at
+      t.integer :event_id
+
+
 
       t.timestamps
     end

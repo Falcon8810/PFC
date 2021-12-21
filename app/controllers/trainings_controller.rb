@@ -4,6 +4,8 @@ class TrainingsController < ApplicationController
   end
 
   def new
+    @training = Training.new
+    render plain: render_to_string(partial: 'new', layout: false, locals: { event: @training })
   end
 
   def create

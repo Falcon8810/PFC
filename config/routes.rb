@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #     patch "withdraw"
   #   end
   # end
-  resources :trainings, :bodys, :meals
+  resources :trainings, :training_details, :bodys, :meals
   resources :events, except: [:show]
 
 end
