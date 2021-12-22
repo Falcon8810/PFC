@@ -1,5 +1,6 @@
-<h1>種目一覧</h1>
+<h1>種目</h1>
 
+<h2>種目登録</h2>
 <%= form_with model:@event, local:true do |f| %>
   <div>
     <%= f.label :"種目名" %>
@@ -14,3 +15,24 @@
   </div>
 <% end %>
 
+<h2>種目一覧</h2>
+<% @events.each do |event| %>
+  <div>
+    <span>種目名</span>
+    <%= event.name %>
+  </div>
+  <div>
+    <span>部位</span>
+    <%= event.body_part_i18n %>
+  </div>
+  <div>
+    <%= link_to edit_event_path(event.id) do %>
+      <button type="button" class="btn btn-success">編集</button>
+    <% end %>
+  </div>
+    <div>
+    <%= link_to event_path(event.id), method: :delete do %>
+      <button type="button" class="btn btn-danger">削除</button>
+    <% end %>
+  </div>
+<% end %>

@@ -1,2 +1,14 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<h2>種目編集</h2>
+<%= form_with model:@event, local:true do |f| %>
+  <div>
+    <%= f.label :"種目名" %>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :"部位" %>
+    <%= f.select :body_part, Event.body_parts_i18n.keys.map{|k| [I18n.t("enums.event.body_part.#{k}"), k]} %>
+  </div>
+  <div>
+    <%= f.submit '登録' %>
+  </div>
+<% end %>

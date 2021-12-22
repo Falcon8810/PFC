@@ -1,11 +1,8 @@
 class CreateTrainings < ActiveRecord::Migration[5.2]
   def change
     create_table :trainings do |t|
-      t.datetime :starts_at
-      t.datetime :ends_at
+      t.date :training_date
       t.integer :event_id
-
-
 
       t.timestamps
     end

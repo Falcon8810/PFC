@@ -1,20 +1,36 @@
 <h1>筋トレカレンダー</h1>
-<div id="calendar"></div>
+<!--<div id="calendar"></div>-->
 
-<div class="modal fade" id="modal" tabindex="-1">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
-				<h4 class="modal-title">タイトル</h4>
-			</div>
-			<div class="modal-body">
-				本文
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-				<button type="button" class="btn btn-primary">ボタン</button>
-			</div>
-		</div>
-	</div>
-</div>
+<!--<div class="modal fade" id="modal" tabindex="-1">-->
+<!--	<div class="modal-dialog">-->
+<!--		<div class="modal-content">-->
+<!--			<div class="modal-header">-->
+<!--				<button type="button" class="close" data-dismiss="modal"><span>×</span></button>-->
+<!--				<h4 class="modal-title">タイトル</h4>-->
+<!--			</div>-->
+<!--			<div class="modal-body">-->
+<!--				本文-->
+<!--			</div>-->
+<!--			<div class="modal-footer">-->
+<!--				<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>-->
+<!--				<button type="button" class="btn btn-primary">ボタン</button>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</div>-->
+<h2>トレーニング内容一覧</h2>
+<% @trainings.each do |training| %>
+	<!--日付 Training.starts_at, Training.ends_at -->
+	<span>ここに日付</span>
+	<!--ここから別のモデルの内容表示-->
+	<!--種目Event.name-->
+	<%= training.event.name %>
+	<!--以下の３つの項目を種目１つに対して繰り返しで表示したい-->
+	<!--重さ TrainingDetail.weight-->
+	<%= training.training_detail.weight %>
+	<!--回数 TrainingDetail.repetition-->
+	<%= training.training_detail.repetition %>
+	<!--メモ TrainingDetail.memo-->
+	<%= training.training_detail.memo %>
+
+<% end %>

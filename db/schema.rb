@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_13_020601) do
+ActiveRecord::Schema.define(version: 2021_12_22_091507) do
+
+  create_table "bodies", force: :cascade do |t|
+    t.integer "user_id"
+    t.float "weight"
+    t.float "bfp"
+    t.string "image_id"
+    t.date "record_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.integer "body_part", null: false
@@ -49,8 +59,7 @@ ActiveRecord::Schema.define(version: 2021_12_13_020601) do
   end
 
   create_table "trainings", force: :cascade do |t|
-    t.datetime "starts_at"
-    t.datetime "ends_at"
+    t.date "training_date"
     t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

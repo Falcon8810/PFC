@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def show
+    @training_details = TrainingDetail.all
+    # @event = Event.find(params[:id])
   end
 
   # def edit
@@ -8,9 +10,9 @@ class UsersController < ApplicationController
   # def update
   # end
 
-  def unsubscribe
-  end
+  # def unsubscribe
+  # end
 
-  def withdraw
-  end
+  # def withdraw
+  # end
 end

@@ -2,6 +2,7 @@ class CreateMealDetails < ActiveRecord::Migration[5.2]
   def change
     create_table :meal_details do |t|
       t.integer :meal_id
+      # t.references :meal_id, foreign_key: true
       t.integer :my_menu_id
       t.string :name
       t.integer :calory
