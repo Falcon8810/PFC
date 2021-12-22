@@ -1,7 +1,7 @@
 class CreateBodies < ActiveRecord::Migration[5.2]
   def change
     create_table :bodies do |t|
-      t.integer :user_id
+      t.references :user, foreign_key: true
       t.float :weight
       t.float :bfp
       t.string :image_id
