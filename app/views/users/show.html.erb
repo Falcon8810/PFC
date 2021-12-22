@@ -1,4 +1,7 @@
 <h1>マイページ</h1>
+<%= link_to "トレーニング追加", new_training_path, class: "btn btn-outline-secondary" %>
+<%= link_to "食事追加", new_meal_path, class: "btn btn-outline-secondary" %>
+<%= link_to "カラダ追加", new_body_path, class: "btn btn-outline-secondary" %>
 <div>
   <ul>
     <li>筋トレカレンダー</li>
@@ -33,8 +36,3 @@
     <td><%= current_user.weight %></td>
   </tr>
 </table>
-
-
-<div>
-  <%= link_to "種目", events_path %>
-</div>

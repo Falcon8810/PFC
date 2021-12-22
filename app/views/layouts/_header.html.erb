@@ -28,7 +28,13 @@
             <%= link_to "食事", meals_path, class: "btn btn-outline-secondary" %>
           </li>
           <li class="nav-item nav-link">
+            <%= link_to "食事追加", new_meal_path, class: "btn btn-outline-secondary" %>
+          </li>
+          <li class="nav-item nav-link">
             <%= link_to "カラダ", bodies_path, class: "btn btn-outline-secondary" %>
+          </li>
+          <li class="nav-item nav-link">
+            <%= link_to "カラダ追加", new_body_path, class: "btn btn-outline-secondary" %>
           </li>
           <li class="nav-item nav-link">
             <%= link_to "基本情報設定",  edit_user_registration_path, class: "btn btn-outline-secondary" %>

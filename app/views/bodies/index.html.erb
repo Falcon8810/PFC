@@ -1,2 +1,18 @@
 <h1>カラダ　体重、体脂肪率一覧</h1>
 
+<table>
+	<tr>
+		<th>日付</th>
+		<th>体重</th>
+		<th>体脂肪率</th>
+		<th>カラダ写真</th>
+	</tr>
+<% @bodies.each do |body| %>
+  <tr>
+    <td><%= body.record_date %></td>
+    <td><%= body.record_date %></td>
+    <td><%= body.weight %></td>
+    <td><%= body.bfp %></td>
+    <td><%= attachment_image_tag body, :image, :fill, 100, 100, format: 'jpeg' %></td>
+  </tr>
+<% end %>
