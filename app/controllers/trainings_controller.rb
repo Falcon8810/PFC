@@ -1,6 +1,6 @@
 class TrainingsController < ApplicationController
   def index
-    @trainings = Training.all
+    @trainings = Training.all.order("training_date ASC")
   end
 
   def new
@@ -31,7 +31,7 @@ class TrainingsController < ApplicationController
     @training = Training.find(params[:id])
     if @training.update(training_params)
       flash[:notice] = "更新しました"
-      redirect_to evetns_path
+      redirect_to trainings_path
     else
       flash[:alert] = "もう一度入力してください"
       render :edit

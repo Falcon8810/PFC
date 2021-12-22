@@ -1,4 +1,4 @@
-<h1>筋トレカレンダー</h1>
+<!--<h1>筋トレカレンダー</h1>-->
 <!--<div id="calendar"></div>-->
 
 <!--<div class="modal fade" id="modal" tabindex="-1">-->
@@ -18,36 +18,49 @@
 <!--		</div>-->
 <!--	</div>-->
 <!--</div>-->
-<h2>トレーニング内容一覧</h2>
-<% @trainings.each do |training| %>
-	<div>
-		<span>日付</span>
-		<%= training.training_date %>
-	</div>
-	<!--ここからネストされたtraninig_details modelの内容-->
-	<% training.training_details.each do |training_detail| %>
-	<div>
-		<span>種目名</span>
-		<%= training_detail.training_name %>
-	</div>
-	<div>
-		<span>部位</span>
-		<%= training_detail.body_part_i18n %>d
-	</div>
-	<div>
-		<span>重さ</span>
-		<%= training_detail.weight %>
-	</div>
-	<div>
-		<span>回数</span>
-		<%= training_detail.repetition %>
-	</div>
-	<div>
-		<span>memo</span>
-		<%= training_detail.memo %>
-	</div>
-	<% end %>
-	<%= link_to "編集", edit_training_path(training.id) %>
-	<%= link_to "削除", training_path(training.id), method: :delete %>
+<h1>トレーニング内容一覧</h1>
+<table>
+	<tr>
+		<th>日付</th>
+		<th>種目名</th>
+		<th>部位</th>
+		<th>重さ</th>
+		<th>回数</th>
+		<th>memo</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% @trainings.each do |training| %>
+		<tr>
+			<td>
+				<%= training.training_date %>
+			</td>
+			<!--ここからネストされたtraninig_details modelの内容-->
+			<% training.training_details.each do |training_detail| %>
 
-<% end %>
+				<td>
+					<%= training_detail.training_name %>
+				</td>
+				<td>
+					<%= training_detail.body_part_i18n %>
+				</td>
+				<td>
+					<%= training_detail.weight %>
+				</td>
+				<td>
+					<%= training_detail.repetition %>
+				</td>
+				<td>
+					<%= training_detail.memo %>
+				</td>
+
+			<% end %>
+			<td>
+				<%= link_to "編集", edit_training_path(training.id) %>
+			</td>
+			<td>
+				<%= link_to "削除", training_path(training.id), method: :delete %>
+			</td>
+		</tr>
+	<% end %>
+</table>
