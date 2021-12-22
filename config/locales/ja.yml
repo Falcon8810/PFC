@@ -6,7 +6,7 @@ ja:
         middle: "普通"
         high: "高い"
   enums:
-    event:
+    training_detail:
       body_part:
         chest: "胸"
         back: "背中"

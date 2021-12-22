@@ -22,13 +22,6 @@ ActiveRecord::Schema.define(version: 2021_12_22_091507) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "events", force: :cascade do |t|
-    t.integer "body_part", null: false
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "meal_details", force: :cascade do |t|
     t.integer "meal_id"
     t.integer "my_menu_id"
@@ -49,18 +42,21 @@ ActiveRecord::Schema.define(version: 2021_12_22_091507) do
   end
 
   create_table "training_details", force: :cascade do |t|
+    t.integer "training_id"
     t.float "weight"
     t.integer "repetition"
     t.float "time"
     t.float "distance"
     t.string "memo"
+    t.integer "body_part", null: false
+    t.string "training_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["training_id"], name: "index_training_details_on_training_id"
   end
 
   create_table "trainings", force: :cascade do |t|
     t.date "training_date"
-    t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

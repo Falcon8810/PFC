@@ -8,30 +8,25 @@
 <!--これだけTrainingモデル-->
 <span>ここで日付選択</span>
   <div class="form-group">
-    <%= f.label :created_at, class: 'control-label' %>
-    <%= f.date_field :created_at, class: 'form-control' %>
-  </div>
+    <%= f.label :training_date, class: 'control-label' %>
+    <%= f.date_field :training_date, class: 'form-control' %>
 
-<!--別のモデル,Event -->
-  <%= f.fields_for :@events do |event| %>
-    <div class="field">
-      <%= event.label :name, '種目' %>
-      <%= event.collection_select(:event_id, @events, :id, :name, prompt: "選択してください") %>
-    </div>
-  <% end %>
+    <%= f.fields_for :training_details do |training_detail| %>
+       <%= training_detail.label :training_name, "種目名" %>
+       <%= training_detail.text_field :training_name %>
 
-<!--別のモデル, TrainingDetailモデル-->
-  <div>
-    <%= f.label :"重さ" %>
-    <%= f.number_field :weight, autofocus: true %>
-  </div>
-  <div>
-    <%= f.label :"回数" %>
-    <%= f.number_field :repetition %>
-  </div>
-  <div>
-    <%= f.label :"メモ" %>
-    <%= f.text_field :memo %>
+       <%= training_detail.label :body_part, "部位" %>
+       <%= training_detail.select :body_part, TrainingDetail.body_parts_i18n.keys.map{|k| [I18n.t("enums.training_detail.body_part.#{k}"), k]} %>
+
+       <%= training_detail.label :weight, "重さ" %>
+       <%= training_detail.number_field :weight %>
+
+       <%= training_detail.label :repetition, "回数" %>
+       <%= training_detail.number_field :repetition %>
+
+       <%= training_detail.label :memo, "メモ" %>
+       <%= training_detail.text_field :memo %>
+    <% end %>
   </div>
   <div>
     <%= f.submit '登録' %>

@@ -22,15 +22,21 @@
 <% @trainings.each do |training| %>
 	<!--日付 Training.starts_at, Training.ends_at -->
 	<span>ここに日付</span>
+	<% training.training_details.each do |training_detail| %>
+		<%= training_detail.training_name %>
+		<%= training_detail.training_name %>
+		<%= training_detail.training_name %>
+		<%= training_detail.training_name %>
+	<% end %>
 	<!--ここから別のモデルの内容表示-->
 	<!--種目Event.name-->
-	<%= training.event.name %>
+	<%#= training.event.name %>
 	<!--以下の３つの項目を種目１つに対して繰り返しで表示したい-->
 	<!--重さ TrainingDetail.weight-->
-	<%= training.training_detail.weight %>
+	<%##= training.training_details.weight %>
 	<!--回数 TrainingDetail.repetition-->
-	<%= training.training_detail.repetition %>
+	<%#= training.training_detail.repetition %>
 	<!--メモ TrainingDetail.memo-->
-	<%= training.training_detail.memo %>
+	<%#= training.training_detail.memo %>
 
 <% end %>

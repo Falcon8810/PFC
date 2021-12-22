@@ -5,7 +5,6 @@ class TrainingDetailsController < ApplicationController
 
   def new
     @training_detail = TrainingDetail.new
-    @events = Event.all
   end
 
   def create
