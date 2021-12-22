@@ -1,4 +1,5 @@
-class BodysController < ApplicationController
+class BodiesController < ApplicationController
+
   def index
   end
 
@@ -6,9 +7,6 @@ class BodysController < ApplicationController
   end
 
   def create
-  end
-
-  def show
   end
 
   def edit
@@ -19,4 +17,5 @@ class BodysController < ApplicationController
 
   def destroy
   end
+
 end
