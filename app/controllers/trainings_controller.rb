@@ -12,8 +12,10 @@ class TrainingsController < ApplicationController
   def create
     @training = Training.new(training_params)
     if @training.save!
+      flash[:notice] = "登録しました"
       redirect_to trainings_path
     else
+      flash[:alert] = "もう一度入力してください"
       render :new
     end
   end
@@ -22,12 +24,25 @@ class TrainingsController < ApplicationController
   end
 
   def edit
+    @training = Training.find(params[:id])
   end
 
   def update
+    @training = Training.find(params[:id])
+    if @training.update(training_params)
+      flash[:notice] = "更新しました"
+      redirect_to evetns_path
+    else
+      flash[:alert] = "もう一度入力してください"
+      render :edit
+    end
   end
 
   def destroy
+    training = Training.find(params[:id])
+    training.destroy
+    flash[:notice] = "削除しました"
+    redirect_to trainings_path
   end
 
   private

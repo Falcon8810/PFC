@@ -20,23 +20,34 @@
 <!--</div>-->
 <h2>トレーニング内容一覧</h2>
 <% @trainings.each do |training| %>
-	<!--日付 Training.starts_at, Training.ends_at -->
-	<span>ここに日付</span>
+	<div>
+		<span>日付</span>
+		<%= training.training_date %>
+	</div>
+	<!--ここからネストされたtraninig_details modelの内容-->
 	<% training.training_details.each do |training_detail| %>
+	<div>
+		<span>種目名</span>
 		<%= training_detail.training_name %>
-		<%= training_detail.training_name %>
-		<%= training_detail.training_name %>
-		<%= training_detail.training_name %>
+	</div>
+	<div>
+		<span>部位</span>
+		<%= training_detail.body_part_i18n %>d
+	</div>
+	<div>
+		<span>重さ</span>
+		<%= training_detail.weight %>
+	</div>
+	<div>
+		<span>回数</span>
+		<%= training_detail.repetition %>
+	</div>
+	<div>
+		<span>memo</span>
+		<%= training_detail.memo %>
+	</div>
 	<% end %>
-	<!--ここから別のモデルの内容表示-->
-	<!--種目Event.name-->
-	<%#= training.event.name %>
-	<!--以下の３つの項目を種目１つに対して繰り返しで表示したい-->
-	<!--重さ TrainingDetail.weight-->
-	<%##= training.training_details.weight %>
-	<!--回数 TrainingDetail.repetition-->
-	<%#= training.training_detail.repetition %>
-	<!--メモ TrainingDetail.memo-->
-	<%#= training.training_detail.memo %>
+	<%= link_to "編集", edit_training_path(training.id) %>
+	<%= link_to "削除", training_path(training.id), method: :delete %>
 
 <% end %>

@@ -6,9 +6,8 @@
 
 <!--日付選択-->
 <!--これだけTrainingモデル-->
-<span>ここで日付選択</span>
   <div class="form-group">
-    <%= f.label :training_date, class: 'control-label' %>
+    <%= f.label :日付, class: 'control-label' %>
     <%= f.date_field :training_date, class: 'form-control' %>
 
     <%= f.fields_for :training_details do |training_detail| %>
