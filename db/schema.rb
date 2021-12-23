@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2021_12_22_091507) do
 
   create_table "meal_details", force: :cascade do |t|
     t.integer "meal_id"
-    t.integer "my_menu_id"
     t.string "name"
     t.integer "calory"
     t.float "protein"
@@ -34,7 +33,6 @@ ActiveRecord::Schema.define(version: 2021_12_22_091507) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["meal_id"], name: "index_meal_details_on_meal_id"
-    t.index ["my_menu_id"], name: "index_meal_details_on_my_menu_id"
   end
 
   create_table "meals", force: :cascade do |t|

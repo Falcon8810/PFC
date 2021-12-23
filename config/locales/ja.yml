@@ -5,7 +5,6 @@ ja:
         low: "低い"
         middle: "普通"
         high: "高い"
-  enums:
     training_detail:
       body_part:
         chest: "胸"
