@@ -33,13 +33,18 @@ ActiveRecord::Schema.define(version: 2021_12_22_091507) do
     t.float "carb"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["meal_id"], name: "index_meal_details_on_meal_id"
+    t.index ["my_menu_id"], name: "index_meal_details_on_my_menu_id"
   end
 
   create_table "meals", force: :cascade do |t|
+    t.integer "user_id"
     t.date "date", null: false
     t.integer "category", null: false
+    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_meals_on_user_id"
   end
 
   create_table "training_details", force: :cascade do |t|
