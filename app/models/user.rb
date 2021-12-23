@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :body
+  has_many :bodies
 
   validates :name, presence: true
   # validates :sex, presence: true

@@ -33,7 +33,7 @@
 	<% @trainings.each do |training| %>
 		<tr>
 			<td>
-				<%= training.training_date %>
+				<%= training.training_date.strftime('%Y/%m/%d') %>
 			</td>
 			<!--ここからネストされたtraninig_details modelの内容-->
 			<% training.training_details.each do |training_detail| %>
