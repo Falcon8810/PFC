@@ -3,32 +3,41 @@
 <%= form_with model:@meal, local:true do |f| %>
 
 <!--これはmealモデル-->
-  <div class="form-group">
+  <div class="form-group col-md-3">
     <%= f.label :日付, class: 'control-label' %>
     <%= f.date_field :date, class: 'form-control' %>
-
+  </div>
+  <div class="form-group col-md-3">
     <%= f.label :category, "カテゴリー" %>
     <%= f.select :category, Meal.categories_i18n.keys.map{|k| [I18n.t("enums.meal.category.#{k}"), k]} %>
-
+  </div>
+  <div class="form-group col-md-3">
     <%= f.label :image, "食事写真" %>
     <%= f.attachment_field :image %>
+  </div>
 
   <!--ここからmeal_detailモデル-->
     <%= f.fields_for :meal_details do |meal_detail| %>
-       <%= meal_detail.label :name, "食事名" %>
-       <%= meal_detail.text_field :name %>
-
-       <%= meal_detail.label :calory, "カロリー" %>
-       <%= meal_detail.number_field :calory, step: '0.1' %>
-
-       <%= meal_detail.label :protein, "たんぱく質" %>
-       <%= meal_detail.number_field :protein,  step: '0.1' %>
-
-       <%= meal_detail.label :fat, "脂質" %>
-       <%= meal_detail.number_field :fat, step: '0.1' %>
-
-       <%= meal_detail.label :carb, "炭水化物" %>
-       <%= meal_detail.number_field :carb, step: '0.1' %>
+      <div class="form-group col-md-3">
+        <%= meal_detail.label :name, "食事名" %>
+        <%= meal_detail.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-3">
+        <%= meal_detail.label :calory, "カロリー" %>
+        <%= meal_detail.number_field :calory, step: '0.1', class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-3">
+        <%= meal_detail.label :protein, "たんぱく質" %>
+        <%= meal_detail.number_field :protein,  step: '0.1', class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-3">
+        <%= meal_detail.label :fat, "脂質" %>
+        <%= meal_detail.number_field :fat, step: '0.1', class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-3">
+        <%= meal_detail.label :carb, "炭水化物" %>
+        <%= meal_detail.number_field :carb, step: '0.1', class: 'form-control' %>
+      </div>
     <% end %>
   </div>
   <div>

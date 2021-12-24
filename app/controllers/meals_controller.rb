@@ -29,8 +29,8 @@ class MealsController < ApplicationController
   end
 
   def update
-    @meal = Meal.find(meal_params)
-    if @meal.update
+    @meal = Meal.find(params[:id])
+    if @meal.update(meal_params)
       flash[:notice] = "更新しました"
       redirect_to meals_path
     else

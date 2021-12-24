@@ -19,48 +19,52 @@
 <!--	</div>-->
 <!--</div>-->
 <h1>トレーニング内容一覧</h1>
-<table>
-	<tr>
-		<th>日付</th>
-		<th>種目名</th>
-		<th>部位</th>
-		<th>重さ</th>
-		<th>回数</th>
-		<th>memo</th>
-		<th></th>
-		<th></th>
-	</tr>
-	<% @trainings.each do |training| %>
+<table class="table table-striped table-hover">
+	<thead class="thead-dark">
 		<tr>
-			<td>
-				<%= training.training_date.strftime('%Y/%m/%d') %>
-			</td>
-			<!--ここからネストされたtraninig_details modelの内容-->
-			<% training.training_details.each do |training_detail| %>
-
-				<td>
-					<%= training_detail.training_name %>
-				</td>
-				<td>
-					<%= training_detail.body_part_i18n %>
-				</td>
-				<td>
-					<%= training_detail.weight %>
-				</td>
-				<td>
-					<%= training_detail.repetition %>
-				</td>
-				<td>
-					<%= training_detail.memo %>
-				</td>
-
-			<% end %>
-			<td>
-				<%= link_to "編集", edit_training_path(training.id) %>
-			</td>
-			<td>
-				<%= link_to "削除", training_path(training.id), method: :delete %>
-			</td>
+			<th>日付</th>
+			<th>種目名</th>
+			<th>部位</th>
+			<th>重さ</th>
+			<th>回数</th>
+			<th>memo</th>
+			<th></th>
+			<th></th>
 		</tr>
-	<% end %>
+	</thead>
+	<tbody>
+		<% @trainings.each do |training| %>
+			<tr>
+				<td>
+					<%= training.training_date.strftime('%Y/%m/%d') %>
+				</td>
+				<!--ここからネストされたtraninig_details modelの内容-->
+				<% training.training_details.each do |training_detail| %>
+
+					<td>
+						<%= training_detail.training_name %>
+					</td>
+					<td>
+						<%= training_detail.body_part_i18n %>
+					</td>
+					<td>
+						<%= training_detail.weight %>
+					</td>
+					<td>
+						<%= training_detail.repetition %>
+					</td>
+					<td>
+						<%= training_detail.memo %>
+					</td>
+
+				<% end %>
+				<td>
+					<%= link_to "編集", edit_training_path(training.id) %>
+				</td>
+				<td>
+					<%= link_to "削除", training_path(training.id), method: :delete, data: {confirm: "削除しますか？"} %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
 </table>
