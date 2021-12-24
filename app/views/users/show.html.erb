@@ -4,13 +4,14 @@
 <%= link_to "カラダ追加", new_body_path, class: "btn btn-outline-secondary" %>
 <div>
   <ul>
-    <li>筋トレカレンダー</li>
-    <li>栄養サマリー</li>
-    <li>体重グラフ</li>
+    <li>【中止】筋トレカレンダー</li>
+    <li>【表で】栄養サマリー</li>
+    <li>【表で？もしくは中止】体重グラフ</li>
+
   </ul>
   </div>
 
-<table>
+<table class: 'table'>
   <tr>
     <th>ニックネーム</th>
     <td><%= current_user.name %></td>

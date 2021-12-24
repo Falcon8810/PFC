@@ -9,11 +9,12 @@
   </div>
   <div class="form-group col-md-3">
     <%= f.label :category, "カテゴリー" %>
-    <%= f.select :category, Meal.categories_i18n.keys.map{|k| [I18n.t("enums.meal.category.#{k}"), k]} %>
+    <!--<#%= f.select :category, Meal.categories_i18n.keys.map{|k| [I18n.t("enums.meal.category.#{k}"), k]} %>-->
+    <%= f.select :category, Meal.categories_i18n.invert, {prompt: false}, class:"form-control col-6" %>
   </div>
   <div class="form-group col-md-3">
     <%= f.label :image, "食事写真" %>
-    <%= f.attachment_field :image %>
+    <%= f.attachment_field :image, class: "form-control-file" %>
   </div>
 
   <!--ここからmeal_detailモデル-->
@@ -40,7 +41,7 @@
       </div>
     <% end %>
   </div>
-  <div>
+  <div class="form-group col-md-3">
     <%= f.submit '登録' %>
   </div>
 
