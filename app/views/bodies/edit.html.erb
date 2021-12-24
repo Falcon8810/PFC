@@ -1,18 +1,2 @@
-<h1>カラダ　入力フォーム</h1>
-<%= form_with model:@body, local:true do |f| %>
-
-  <%= f.label :日付, class: 'control-label' %>
-  <%= f.date_field :record_date, class: 'form-control' %>
-
-  <%= f.label :weight, "体重" %>
-  <%= f.number_field :weight, step: '0.1', min: '20' %>
-
-  <%= f.label :bfp, "体脂肪率" %>
-  <%= f.number_field :bfp , step: '0.1', min: '0' %>
-
-  <%= f.label :image, "カラダ写真" %>
-  <%= f.attachment_field :image %>
-
-  <%= f.submit '投稿' %>
-
-<% end %>
+<h1>体組成 編集</h1>
+<%= render 'bodies/form', body: @body %>

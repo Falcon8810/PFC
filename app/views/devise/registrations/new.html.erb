@@ -26,21 +26,27 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
   </div>
 
-  <div class="btn-group col-md-3 btn-group-toggle", data-toggle="buttons" >
+  <!--<div class="form-group btn-group col-md-3 btn-group-toggle", data-toggle="buttons" >-->
+  <div class="form-group col-md-3">
     <%= f.label :"性別" %><br />
-    <label class="btn btn-outline-secondary">
-      <%= f.radio_button :sex, :true %>男性
-    </label>
-    <label class="btn btn-outline-secondary">
-      <%= f.radio_button :sex, :false %>女性
-    </label>
-    <%#= f.label :sex, "男性", {value: :true, style: "display: inline-block;"} %>
-    <%#= f.label :sex, "女性", {value: :false, style: "display: :inline-block;"} %>
+    <%= f.radio_button :sex, :true %>
+    <%= f.label :sex, "男性", {value: :true, style: "display: inline-block;"} %>
+    <%= f.radio_button :sex, :false %>
+    <%= f.label :sex, "女性", {value: :false, style: "display: :inline-block;"} %>
+
+    <!--<label class="btn btn-outline-secondary" >-->
+      <%#= f.radio_button :sex, :true %>
+      <%#= f.label :sex, "男性" %>
+    <!--</label>-->
+    <!--<label class="btn btn-outline-secondary" >-->
+      <%#= f.radio_button :sex, :false %>
+      <%#= f.label :sex, "女性" %>
+    <!--</label>-->
   </div>
 
   <div class="form-group col-md-3">
     <%= f.label "生年月日" %><br />
-    <%= f.date_select :birthday, use_month_numbers: true, prompt: "--", start_year: (Time.now.year - 10), end_year: 1930 %>
+    <%= f.date_select :birthday, use_month_numbers: true, default: Date.new(1990, 1, 1), start_year: (Time.now.year - 10), end_year: 1930 %>
   </div>
 
   <div class="form-group col-md-3">
@@ -56,8 +62,9 @@
   <!--ここに活動レベル入れるべきか-->
 
   <div class="form-group col-md-3">
-    <%= f.submit t('.sign_up') %>
+    <%= f.submit t('.sign_up'), class: 'btn btn-info' %>
   </div>
 <% end %>
 
+<span>すでに登録済みの方</span><br />
 <%= render "devise/shared/links" %>
