@@ -2,14 +2,73 @@
 <%= link_to "トレーニング追加", new_training_path, class: "btn btn-outline-secondary" %>
 <%= link_to "食事追加", new_meal_path, class: "btn btn-outline-secondary" %>
 <%= link_to "カラダ追加", new_body_path, class: "btn btn-outline-secondary" %>
+
 <div>
   <ul>
     <li>【中止】筋トレカレンダー</li>
     <li>【表で】栄養サマリー</li>
     <li>【表で？もしくは中止】体重グラフ</li>
-
   </ul>
   </div>
+
+  <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col">基礎代謝</th>
+      <th scope="col">活動レベルによる<br />１日の消費カロリー</th>
+      <th scope="col">目的に合わせた<br />カロリー設定</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= current_user.calc_bmr %>kcal
+      </td>
+      <td><%= current_user.calc_activity_metabolism %>kcal</td>
+      <td><%= current_user.by_purpose %>kcal</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2>栄養サマリー</h2>
+<h3><%= Date.today.strftime(‘%Y年 %m月 %d日’) %></h3>
+  <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">本日摂取済</th>
+      <th scope="col">目的別設定カロリー</th>
+      <th scope="col">残り</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">カロリー</th>
+      <td>摂取済カロリー</td>
+      <td><%= current_user.by_purpose %>kcal</td>
+      <td>残りカロリー</td>
+    </tr>
+    <tr>
+      <th scope="row">【P】タンパク質</th>
+      <td>摂取済みたんぱく質</td>
+      <td><%= current_user.protein_per_day %>g</td>
+      <td>残りたんぱく質</td>
+    </tr>
+    <tr>
+      <th scope="row">【F】脂質</th>
+      <td>摂取済み脂質</td>
+      <td><%= current_user.fat_per_day %>g</td>
+      <td>残り脂質</td>
+    </tr>
+    <tr>
+      <th scope="row">【C】炭水化物</th>
+      <td>摂取済み炭水化物</td>
+      <td><%= current_user.carb_per_day %>g</td>
+      <td>残り炭水化物</td>
+    </tr>
+  </tbody>
+</table>
 
 <table class: 'table'>
   <tr>

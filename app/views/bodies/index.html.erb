@@ -16,8 +16,8 @@
     <td><%= body.bfp %></td>
     <td><%= attachment_image_tag body, :image, :fill, 100, 100 %></td>
     <% if body.user_id == current_user.id %>
-      <td><%= link_to '編集', edit_body_path(body.id) %></td>
-      <td><%= link_to '削除', body_path(body.id), method: :delete, data: {confirm: "削除しますか？"} %></td>
+      <td><%= link_to '編集', edit_body_path(body.id), class: 'btn btn-outline-success' %></td>
+      <td><%= link_to '削除', body_path(body.id), method: :delete, data: {confirm: "削除しますか？"}, class: 'btn btn-outline-danger' %></td>
     <% end %>
   </tr>
 

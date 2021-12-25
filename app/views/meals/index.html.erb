@@ -45,10 +45,10 @@
 
 			<% end %>
 			<td>
-				<%= link_to "編集", edit_meal_path(meal.id) %>
+				<%= link_to "編集", edit_meal_path(meal.id), class: "btn btn-outline-success" %>
 			</td>
 			<td>
-				<%= link_to "削除", meal_path(meal.id), method: :delete, data: {confirm: "削除しますか？"} %>
+				<%= link_to "削除", meal_path(meal.id), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-danger" %>
 			</td>
 		</tr>
 	<% end %>
