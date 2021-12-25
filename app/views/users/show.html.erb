@@ -22,10 +22,10 @@
   <tbody>
     <tr>
       <td>
-        <%= current_user.calc_bmr %>kcal
+        <%= current_user.calc_bmr.round(2) %>kcal
       </td>
-      <td><%= current_user.calc_activity_metabolism %>kcal</td>
-      <td><%= current_user.by_purpose %>kcal</td>
+      <td><%= current_user.calc_activity_metabolism.round(2) %>kcal</td>
+      <td><%= current_user.by_purpose.round(2) %>kcal</td>
     </tr>
   </tbody>
 </table>
@@ -37,8 +37,8 @@
   <thead>
     <tr>
       <th scope="col"></th>
-      <th scope="col">本日摂取済</th>
-      <th scope="col">目的別設定カロリー</th>
+      <th scope="col">本日摂取</th>
+      <th scope="col">目的別<br />一日あたり</th>
       <th scope="col">残り</th>
     </tr>
   </thead>
@@ -46,25 +46,25 @@
     <tr>
       <th scope="row">カロリー</th>
       <td>摂取済カロリー</td>
-      <td><%= current_user.by_purpose %>kcal</td>
+      <td><%= current_user.by_purpose.round(2) %>kcal</td>
       <td>残りカロリー</td>
     </tr>
     <tr>
       <th scope="row">【P】タンパク質</th>
       <td>摂取済みたんぱく質</td>
-      <td><%= current_user.protein_per_day %>g</td>
+      <td><%= current_user.protein_per_day.round(2) %>g</td>
       <td>残りたんぱく質</td>
     </tr>
     <tr>
       <th scope="row">【F】脂質</th>
       <td>摂取済み脂質</td>
-      <td><%= current_user.fat_per_day %>g</td>
+      <td><%= current_user.fat_per_day.round(2) %>g</td>
       <td>残り脂質</td>
     </tr>
     <tr>
       <th scope="row">【C】炭水化物</th>
       <td>摂取済み炭水化物</td>
-      <td><%= current_user.carb_per_day %>g</td>
+      <td><%= current_user.carb_per_day.round(2) %>g</td>
       <td>残り炭水化物</td>
     </tr>
   </tbody>
