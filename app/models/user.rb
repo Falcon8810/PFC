@@ -31,5 +31,7 @@ class User < ApplicationRecord
   end
 
   enum activity_level: { low: 0, middle: 1, high: 2 }
+  enum purpose: { diet: 0, keep: 1, bulkup: 2 }
+
 
 end

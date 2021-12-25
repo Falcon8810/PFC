@@ -5,6 +5,10 @@ ja:
         low: "低い"
         middle: "普通"
         high: "高い"
+      purpose:
+        diet: "減量"
+        keep: "現状維持"
+        bulkup: "増量"
     training_detail:
       body_part:
         chest: "胸"

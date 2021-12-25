@@ -36,10 +36,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.boolean :sex, default: true, null: false
       t.date :birthday, null: false
       t.float :height, null: false
-      t.float :weight
+      t.float :weight, null: false
       t.string :profile_image_id
       t.boolean :is_deleted, default: false, null: false
-      t.integer :activity_level
+      t.integer :activity_level, null: false
+      t.integer :purpose, null: false
 
       t.timestamps null: false
     end
