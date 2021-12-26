@@ -52,9 +52,9 @@ class User < ApplicationRecord
 
   # 一日あたりの活動代謝
   def calc_activity_metabolism
-    if activity_level == 0
+    if activity_level == "low"
       calc_bmr * 1.2
-    elsif activity_level == 1
+    elsif activity_level == "middle"
       calc_bmr * 1.55
     else
       calc_bmr * 1.725
@@ -63,9 +63,9 @@ class User < ApplicationRecord
 
   # 目的に合わせたカロリー設定
   def by_purpose
-    if purpose == 0
+    if purpose == "diet"
       calc_activity_metabolism * 0.8
-    elsif purpose == 1
+    elsif purpose == "keep"
       calc_activity_metabolism
     else
       calc_activity_metabolism * 1.2

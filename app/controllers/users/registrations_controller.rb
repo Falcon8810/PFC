@@ -61,7 +61,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   protected
-# パスワードなしでuser_edit  
+# パスワードなしでuser_edit
   def update_resource(resource, params)
     resource.update_without_password(params)
   end
@@ -69,10 +69,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_update_path_for(_resource)
     my_page_path
   end
-  
+
   def configure_account_update_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :sex, :birthday, :height, :weight])
-  end    
-  
-  
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :sex, :birthday, :height, :weight, :activity_level, :purpose])
+  end
+
+
 end

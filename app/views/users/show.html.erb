@@ -31,41 +31,41 @@
 </table>
 
 
-<h2>栄養サマリー</h2>
 <h3><%= Date.today.strftime("%Y年%m月%d日") %></h3>
+<h2>本日の栄養サマリー</h2>
   <table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th scope="col"></th>
-      <th scope="col">本日摂取</th>
-      <th scope="col">目的別<br />一日あたり</th>
-      <th scope="col">残り</th>
+      <th scope="col">一日あたり</th>
+      <th scope="col">本日摂取済み</th>
+      <th scope="col">残り摂取可能</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">カロリー</th>
-      <td>摂取済カロリー</td>
       <td><%= current_user.by_purpose.round(2) %>kcal</td>
-      <td>残りカロリー</td>
+      <td><%= @calory %>kcal</td>
+      <td><%= current_user.by_purpose.round(2) - @calory %>kcal</td>
     </tr>
     <tr>
       <th scope="row">【P】タンパク質</th>
-      <td>摂取済みたんぱく質</td>
       <td><%= current_user.protein_per_day.round(2) %>g</td>
-      <td>残りたんぱく質</td>
+      <td><%= @protein %>g</td>
+      <td><%= current_user.protein_per_day.round(2) - @protein %>g</td>
     </tr>
     <tr>
       <th scope="row">【F】脂質</th>
-      <td>摂取済み脂質</td>
       <td><%= current_user.fat_per_day.round(2) %>g</td>
-      <td>残り脂質</td>
+      <td><%= @fat %>g</td>
+      <td><%= (current_user.fat_per_day - @fat).round(2) %>g</td>
     </tr>
     <tr>
       <th scope="row">【C】炭水化物</th>
-      <td>摂取済み炭水化物</td>
       <td><%= current_user.carb_per_day.round(2) %>g</td>
-      <td>残り炭水化物</td>
+      <td><%= @carb %>g</td>
+      <td><%= (current_user.carb_per_day - @carb).round(2) %>g</td>
     </tr>
   </tbody>
 </table>
