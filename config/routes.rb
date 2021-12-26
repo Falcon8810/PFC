@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   #     patch "withdraw"
   #   end
   # end
-  resources :trainings, :training_details, :bodies, :meals
+  resources :trainings
+  # 現状1対1のテーブルになってしまっているから不要
+  # resources :training_details
+  resources :bodies, except: [:show]
+  resources :meals, except: [:show]
   resources :events, except: [:show]
 
 end

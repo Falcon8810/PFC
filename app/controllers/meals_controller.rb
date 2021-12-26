@@ -1,6 +1,6 @@
 class MealsController < ApplicationController
   def index
-    @meals = Meal.all.page(params[:page]).per(3).order("date ASC")
+    @meals = Meal.all.page(params[:page]).per(30).order("date ASC")
   end
 
   def new
@@ -18,10 +18,6 @@ class MealsController < ApplicationController
       flash[:alert] = 'もう一度入力してください'
       render :new
     end
-  end
-
-  def show
-    @meal = Meal.find(params[:id])
   end
 
   def edit
