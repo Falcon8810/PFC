@@ -4,4 +4,7 @@ class Body < ApplicationRecord
 
   attachment :image
 
+  validates :weight, presence: true
+  validates :record_date, presence: true, uniqueness: true
+
 end

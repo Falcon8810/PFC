@@ -4,4 +4,6 @@ class Training < ApplicationRecord
 
   accepts_nested_attributes_for :training_details, allow_destroy: true
 
+  validates :training_date, presence: true
+
 end

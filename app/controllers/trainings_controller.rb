@@ -1,6 +1,6 @@
 class TrainingsController < ApplicationController
   def index
-    @trainings = Training.all.order("training_date ASC")
+    @trainings = Training.all.page(params[:page]).per(30).order("training_date ASC")
   end
 
   def new
@@ -11,7 +11,7 @@ class TrainingsController < ApplicationController
 
   def create
     @training = Training.new(training_params)
-    if @training.save!
+    if @training.save
       flash[:notice] = "登録しました"
       redirect_to trainings_path
     else

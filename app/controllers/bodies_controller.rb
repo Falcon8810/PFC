@@ -11,7 +11,7 @@ class BodiesController < ApplicationController
   def create
     @body = Body.new(body_params)
     @body.user_id = current_user.id
-    if @body.save!
+    if @body.save
       flash[:notice] = "コミット!!"
       redirect_to bodies_path
     else
