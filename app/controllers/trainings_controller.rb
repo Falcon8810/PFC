@@ -11,6 +11,7 @@ class TrainingsController < ApplicationController
 
   def create
     @training = Training.new(training_params)
+    @training.user_id = current_user.id
     if @training.save
       flash[:notice] = "登録しました"
       redirect_to trainings_path
