@@ -61,7 +61,7 @@
 
   <!--ここに活動レベル入れるべきか-->
 
-  <div class="form-group col-md-3">
+  <div class="form-group col-md-8">
     <%= f.label :activity_level, "活動レベル" %>
     <%= f.select :activity_level, User.activity_levels_i18n.invert, {prompt: false}, class:"form-control col-6"  %>
   </div>

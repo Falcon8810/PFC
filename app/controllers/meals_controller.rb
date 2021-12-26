@@ -9,14 +9,32 @@ class MealsController < ApplicationController
   end
 
   def create
-    @meal = Meal.new(meal_params)
-    @meal.user_id = current_user.id
-    if @meal.save
-      flash[:notice] = '登録しました'
-      redirect_to meals_path
+
+    if @meal = Meal.find_by(date: params[:meal][:date])
+      p "finded"
+      xx = MealDetail.new(meal_detail_params)
+      p xx
+      xx.meal_id = @meal.id #moshikasitara iranaikamo...
+      if xx.save
+        flash[:notice] = '登録しました'
+        redirect_to meals_path
+      else
+        flash[:alert] = 'もう一度入力してください'
+        render :new
+      end
     else
-      flash[:alert] = 'もう一度入力してください'
-      render :new
+      p "new inserted"
+      @meal = Meal.new(meal_params)
+      @meal.user_id = current_user.id
+
+
+      if @meal.save
+        flash[:notice] = '登録しました'
+        redirect_to meals_path
+      else
+        flash[:alert] = 'もう一度入力してください'
+        render :new
+      end
     end
   end
 
@@ -25,7 +43,7 @@ class MealsController < ApplicationController
   end
 
   def edit
-    @meal = Meal.find(params[:id])
+    @meal = MealDetail.find(params[:id])
   end
 
   def update
@@ -49,5 +67,9 @@ class MealsController < ApplicationController
   private
   def meal_params
     params.require(:meal).permit(:date, :category, :image, meal_details_attributes:[:id, :name, :calory, :protein, :fat, :carb])
+  end
+
+  def meal_detail_params
+    params.require(:meal).require(:meal_details_attributes).require("0").permit(:name, :calory, :protein, :fat, :carb)
   end
 end

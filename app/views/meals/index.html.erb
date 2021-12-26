@@ -13,6 +13,7 @@
 		<th></th>
 	</tr>
 	<% @meals.each do |meal| %>
+		<% meal.meal_details.each do |meal_detail| %>
 		<tr>
 			<td>
 				<%= meal.date.strftime('%Y/%m/%d') %>
@@ -25,7 +26,7 @@
 			</td>
 
 			<!--ここからネストされたmeal_details modelの内容-->
-			<% meal.meal_details.each do |meal_detail| %>
+			<!--<#% meal.meal_details.each do |meal_detail| %>-->
 
 				<td>
 					<%= meal_detail.name %>
@@ -43,13 +44,14 @@
 					<%= meal_detail.carb %>
 				</td>
 
-			<% end %>
+		<!--<#% end %>-->
 			<td>
-				<%= link_to "編集", edit_meal_path(meal.id), class: "btn btn-outline-success" %>
+				<%= link_to "編集", edit_meal_path(meal_deteal.id), class: "btn btn-outline-success" %>
 			</td>
 			<td>
 				<%= link_to "削除", meal_path(meal.id), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-outline-danger" %>
 			</td>
 		</tr>
+		<% end %>
 	<% end %>
 </table>

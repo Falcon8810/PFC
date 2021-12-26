@@ -3,14 +3,28 @@
 <%= link_to "食事追加", new_meal_path, class: "btn btn-outline-secondary" %>
 <%= link_to "カラダ追加", new_body_path, class: "btn btn-outline-secondary" %>
 
-<div>
-  <ul>
-    <li>【中止】筋トレカレンダー</li>
-    <li>【表で】栄養サマリー</li>
-    <li>【表で？もしくは中止】体重グラフ</li>
-  </ul>
-  </div>
 
+
+<table class: 'table'>
+  <tr>
+    <th>ニックネーム</th>
+    <td><%= current_user.name %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td><%= current_user.sex %></td>
+  </tr>
+  <tr>
+    <th>身長</th>
+    <td><%= current_user.height %></td>
+  </tr>
+  <tr>
+    <th>体重</th>
+    <td><%= current_user.weight %></td>
+  </tr>
+</table>
+
+<h3>基礎代謝</h3>
   <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -31,7 +45,7 @@
 </table>
 
 
-<h2>栄養サマリー</h2>
+<h3>栄養サマリー</h3>
 <h3><%= Date.today.strftime("%Y年%m月%d日") %></h3>
   <table class="table table-bordered table-striped">
   <thead>
@@ -45,7 +59,7 @@
   <tbody>
     <tr>
       <th scope="row">カロリー</th>
-      <td>摂取済カロリー</td>
+      <td>摂取済みカロリー</td>
       <td><%= current_user.by_purpose.round(2) %>kcal</td>
       <td>残りカロリー</td>
     </tr>
@@ -68,31 +82,4 @@
       <td>残り炭水化物</td>
     </tr>
   </tbody>
-</table>
-
-<table class: 'table'>
-  <tr>
-    <th>ニックネーム</th>
-    <td><%= current_user.name %></td>
-  </tr>
-  <tr>
-    <th>メールアドレス</th>
-    <td><%= current_user.email %></td>
-  </tr>
-  <tr>
-    <th>性別</th>
-    <td><%= current_user.sex %></td>
-  </tr>
-  <tr>
-    <th>誕生日</th>
-    <td><%= current_user.birthday %></td>
-  </tr>
-  <tr>
-    <th>身長</th>
-    <td><%= current_user.height %></td>
-  </tr>
-  <tr>
-    <th>体重</th>
-    <td><%= current_user.weight %></td>
-  </tr>
 </table>
