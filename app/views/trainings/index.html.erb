@@ -58,12 +58,14 @@
 					</td>
 
 				<% end %>
-				<td>
-					<%= link_to "編集", edit_training_path(training.id), class: 'btn btn-outline-success' %>
-				</td>
-				<td>
-					<%= link_to "削除", training_path(training.id), method: :delete, data: {confirm: "削除しますか？"}, class: 'btn btn-outline-danger' %>
-				</td>
+	      <% if training.user_id == current_user.id %>
+					<td>
+						<%= link_to "編集", edit_training_path(training.id), class: 'btn btn-outline-success' %>
+					</td>
+					<td>
+						<%= link_to "削除", training_path(training.id), method: :delete, data: {confirm: "削除しますか？"}, class: 'btn btn-outline-danger' %>
+					</td>
+				<% end %>
 			</tr>
 		<% end %>
 	</tbody>
