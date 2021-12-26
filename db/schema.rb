@@ -60,9 +60,11 @@ ActiveRecord::Schema.define(version: 2021_12_22_091507) do
   end
 
   create_table "trainings", force: :cascade do |t|
+    t.integer "user_id"
     t.date "training_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_trainings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,7 +77,7 @@ ActiveRecord::Schema.define(version: 2021_12_22_091507) do
     t.boolean "sex", default: true, null: false
     t.date "birthday", null: false
     t.float "height", null: false
-    t.float "weight", null: false
+    t.float "weight", null: falsed
     t.string "profile_image_id"
     t.boolean "is_deleted", default: false, null: false
     t.integer "activity_level", null: false

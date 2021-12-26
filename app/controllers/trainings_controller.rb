@@ -1,4 +1,5 @@
 class TrainingsController < ApplicationController
+
   def index
     @trainings = Training.all.page(params[:page]).per(30).order("training_date ASC")
   end
