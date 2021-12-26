@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 
   def show
     @training_details = TrainingDetail.all
+
+    # todayの接種済みの数値を取得するための記述
     meals = Meal.where(user_id: current_user.id).where(date: Date.today)
     @calory = 0
     @protein = 0

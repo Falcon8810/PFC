@@ -3,24 +3,50 @@
 <%= link_to "食事追加", new_meal_path, class: "btn btn-outline-secondary" %>
 <%= link_to "カラダ追加", new_body_path, class: "btn btn-outline-secondary" %>
 
+<div>
+<h2>基礎代謝に基づく目安カロリー</h2>
   <table class="table table-bordered table-striped">
-  <thead>
+    <thead>
     <tr>
       <th scope="col">基礎代謝</th>
       <th scope="col">活動レベルによる<br />１日の消費カロリー</th>
       <th scope="col">目的に合わせた<br />カロリー設定</th>
     </tr>
-  </thead>
-  <tbody>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%= current_user.calc_bmr.round(2) %>kcal
+        </td>
+        <td><%= current_user.calc_activity_metabolism.round(2) %>kcal</td>
+        <td><%= current_user.by_purpose.round(2) %>kcal</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+<h2>マクロ栄養素算出（１日当たり）</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
     <tr>
-      <td>
-        <%= current_user.calc_bmr.round(2) %>kcal
-      </td>
-      <td><%= current_user.calc_activity_metabolism.round(2) %>kcal</td>
-      <td><%= current_user.by_purpose.round(2) %>kcal</td>
+      <th scope="col">【P】たんぱく質</th>
+      <th scope="col">【F】脂質</th>
+      <th scope="col">【C】炭水化物</th>
+      <th scope="col">総摂取カロリー</th>
     </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= current_user.protein_per_day.round(2) %>g</td>
+        <td><%= current_user.fat_per_day.round(2) %>g</td>
+        <td><%= current_user.fat_per_day.round(2) %>g</td>
+        <td><%= current_user.by_purpose.round(2) %>kcal</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
 
 <h3><%= Date.today.strftime("%Y年%m月%d日") %></h3>
@@ -29,7 +55,7 @@
   <thead>
     <tr>
       <th scope="col"></th>
-      <th scope="col">一日あたり摂取可能</th>
+      <th scope="col">一日あたり総摂取量目安</th>
       <th scope="col">本日摂取済み</th>
       <th scope="col">残り摂取可能</th>
     </tr>
