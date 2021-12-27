@@ -1,7 +1,7 @@
 class BodiesController < ApplicationController
 
   def index
-    @bodies = Body.all.page(params[:page]).per(30).order("record_date ASC")
+    @bodies = Body.where(user_id: current_user.id).page(params[:page]).per(30).order("record_date ASC")
   end
 
   def new

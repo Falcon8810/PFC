@@ -1,7 +1,7 @@
 class MealsController < ApplicationController
 
   def index
-    @meals = Meal.all.page(params[:page]).per(30).order("date ASC")
+    @meals = Meal.where(user_id: current_user.id).page(params[:page]).per(30).order("date ASC")
   end
 
   def new
