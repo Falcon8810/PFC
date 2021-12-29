@@ -110,7 +110,7 @@
 <!--  * 仮会員としてすぐに利用することも可能に-->
 
 ## 設計書
-![Coming soon](app/assets/images/comingsoon.jpg)
+<!-- ![Coming soon](app/assets/images/comingsoon.jpg) -->
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1ianGQj4mt_a0knuvIow878XP_Cizjuab-dpr0HKRbQA/edit?usp=sharing>
