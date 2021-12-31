@@ -2,7 +2,7 @@
 ![にゃんこ](app/assets/images/nyanko.png)
 
 ## サイト概要
-<!--このサイトは筋トレのモチベーションを保ち続けるためのサイトです。-->
+このサイトは筋トレのモチベーションを保ち続けるためのサイトです。
 
 主な機能は３つ
 1. __トレーニング内容の記録__<br />
@@ -110,7 +110,7 @@
 <!--  * 仮会員としてすぐに利用することも可能に-->
 
 ## 設計書
-![Coming soon](app/assets/images/comingsoon.jpg)
+<!-- ![Coming soon](app/assets/images/comingsoon.jpg) -->
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1ianGQj4mt_a0knuvIow878XP_Cizjuab-dpr0HKRbQA/edit?usp=sharing>
@@ -123,5 +123,5 @@
 - IDE：Cloud9
 
 ## 使用素材
-![Coming soon](app/assets/images/comingsoon.jpg)<br />
+<!-- ![Coming soon](app/assets/images/comingsoon.jpg)<br /> -->
 * [イラストAC](https://www.ac-illust.com/)
