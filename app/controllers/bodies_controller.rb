@@ -12,7 +12,7 @@ class BodiesController < ApplicationController
     @body = Body.new(body_params)
     @body.user_id = current_user.id
     if @body.save
-      flash[:notice] = "コミット!!"
+      flash[:notice] = "コミットでやんす!!"
       redirect_to bodies_path
     else
       flash[:alert] = "もう一度入力してください"
