@@ -6,7 +6,12 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
   get 'my_page' => 'users#show', as: 'my_page'
-
+  # resource :users, only: [:show] do
+  #   collection do
+  #     get "unsubscribe"
+  #     patch "withdraw"
+  #   end
+  # end
   resources :trainings
   # 現状1対1のテーブルになってしまっているから不要
   # resources :training_details
