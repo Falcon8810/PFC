@@ -13,7 +13,7 @@ class MealsController < ApplicationController
     @meal = Meal.new(meal_params)
     @meal.user_id = current_user.id
     if @meal.save
-      flash[:notice] = '登録'
+      flash[:notice] = '登録しました'
       redirect_to meals_path
     else
       flash[:alert] = 'もう一度入力してください'
